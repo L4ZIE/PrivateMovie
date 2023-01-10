@@ -1,5 +1,8 @@
 package dal;
 
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -8,7 +11,7 @@ public class DatabaseConnector {
 
     public DatabaseConnector(){
         dataSource= new SQLServerDataSource();
-        dataSource.setDatabasename("MovieCollectionProject");
+        dataSource.setDatabaseName("MovieCollectionProject");
         dataSource.setUser("CSe22B_29");
         dataSource.setPassword("CSe22B_29");
         dataSource.setServerName("10.176.111.31");
@@ -16,13 +19,19 @@ public class DatabaseConnector {
         dataSource.setTrustServerCertificate(true);
     }
     public Connection getConnection() throws SqlServerException{
-        return dataSource.getConnection();
+        try {
+            return dataSource.getConnection();
+        } catch (SQLServerException e) {
+            throw new RuntimeException(e);
+        }
     }
     public static void main(String[] args) throws SQLException{
         DatabaseConnector databaseConnector = new DatabaseConnector();
 
         try(Connection connection = databaseConnector.getConnection()){
             System.out.println("Is it really open"+ !connection.isClosed());
+        } catch (SqlServerException e) {
+            throw new RuntimeException(e);
         }
     }
 }
