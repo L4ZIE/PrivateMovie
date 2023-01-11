@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="780a54b0-32a3-49b6-91a2-576ea3300b89" name="Changes" comment="" />
+    <list default="true" id="780a54b0-32a3-49b6-91a2-576ea3300b89" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrivateMovie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PrivateMovie.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MoviesearchController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -14,6 +26,7 @@
       </list>
     </option>
   </component>
+
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -28,11 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruger/Desktop/Coding(Java)/MyTunesProject&quot;
   }
 }</component>
@@ -50,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672738509946</updated>
       <workItem from="1672738511446" duration="7000" />
+
       <workItem from="1672913192262" duration="30000" />
       <workItem from="1672914198651" duration="698000" />
       <workItem from="1672915226375" duration="67000" />
@@ -57,6 +79,7 @@
       <workItem from="1673354035336" duration="67000" />
       <workItem from="1673354111879" duration="62000" />
       <workItem from="1673360259161" duration="21000" />
+
     </task>
     <servers />
   </component>
@@ -73,5 +96,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,5 +1,9 @@
 package gui;
 
+
+import be.Movie;
+import dal.DataAccessObject;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -23,9 +27,18 @@ public class MoviesearchController {
     private TextField keywordsTextField;
 
     @FXML
-    private TableView<?> movieTableView;
+    private TableView<Movie> movieTableView;
+
 
     @FXML
     private TableColumn<?, ?> nameTableColumn;
+
+    /*
+    Function that updates the list with the new movie object created from data fetched from the database.
+     */
+    public void UpdateTable(){
+        Movie selectedMovie = DataAccessObject.GetMovie();
+        movieTableView.getItems().add(selectedMovie);
+    }
 
 }
