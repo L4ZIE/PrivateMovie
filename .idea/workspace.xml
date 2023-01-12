@@ -4,101 +4,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="780a54b0-32a3-49b6-91a2-576ea3300b89" name="Changes" comment="">
+    <list default="true" id="0cac5f09-b952-49a6-8d65-17976d1960d2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/microsoft_sqlserver_mssql_jdbc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/microsoft_sqlserver_mssql_jdbc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrivateMovie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PrivateMovie.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MoviesearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2JoJTAg0PSqYviF4mQ0CpYRCPzM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2KEETRSzHOHRv9UaU7vAizMpSbb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
-
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruger/Desktop/Coding(Java)/MyTunesProject&quot;
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/klari/.jdks/javafx-sdk-19/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Bruger\Desktop\PrivateMovie\src\gui" />
-    </key>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="780a54b0-32a3-49b6-91a2-576ea3300b89" name="Changes" comment="" />
-      <created>1672738509946</created>
+      <changelist id="0cac5f09-b952-49a6-8d65-17976d1960d2" name="Changes" comment="" />
+      <created>1673531351564</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1672738509946</updated>
-      <workItem from="1672738511446" duration="7000" />
-
-      <workItem from="1672913192262" duration="30000" />
-      <workItem from="1672914198651" duration="698000" />
-      <workItem from="1672915226375" duration="67000" />
-      <workItem from="1672915308811" duration="3000" />
-      <workItem from="1673354035336" duration="67000" />
-      <workItem from="1673354111879" duration="62000" />
-      <workItem from="1673360259161" duration="21000" />
-
+      <updated>1673531351564</updated>
+      <workItem from="1673531352772" duration="7000" />
+      <workItem from="1673531369236" duration="2546000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

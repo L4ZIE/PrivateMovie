@@ -6,16 +6,16 @@ import javafx.scene.control.TextField;
 public class MoviesearchController {
 
     @FXML
-    private TableColumn<?, ?> castTableColumn;
+    private TableColumn<String, String> castTableColumn;
 
     @FXML
-    private TableColumn<?, ?> descriptionTableColumn;
+    private TableColumn<String, String> descriptionTableColumn;
 
     @FXML
-    private TableColumn<?, ?> genreTableColumn;
+    private TableColumn<String, String> genreTableColumn;
 
     @FXML
-    private TableColumn<?, ?> imdbTableColumn;
+    private TableColumn<Double, Double> imdbTableColumn;
 
     @FXML
     private TextField keywordsTextField;
@@ -24,6 +24,6 @@ public class MoviesearchController {
     private TableView<?> movieTableView;
 
     @FXML
-    private TableColumn<?, ?> nameTableColumn;
+    private TableColumn<String, String> nameTableColumn;
 
 }
