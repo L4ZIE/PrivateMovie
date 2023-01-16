@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DatabaseConnector {
-    private SQLServerDataSource dataSource;
+    private final SQLServerDataSource dataSource;
 
     public DatabaseConnector(){
         dataSource= new SQLServerDataSource();
@@ -18,20 +18,21 @@ public class DatabaseConnector {
         dataSource.setPortNumber(1433);
         dataSource.setTrustServerCertificate(true);
     }
-    public Connection getConnection() throws SqlServerException{
+    public Connection getConnection() {
         try {
-            return dataSource.getConnection();
+            return dataSource.getConnection("CSe22B_29", "CSe22B_29");
         } catch (SQLServerException e) {
             throw new RuntimeException(e);
         }
     }
-    public static void main(String[] args) throws SQLException{
-        DatabaseConnector databaseConnector = new DatabaseConnector();
-
-        try(Connection connection = databaseConnector.getConnection()){
-            System.out.println("Is it really open"+ !connection.isClosed());
-        } catch (SqlServerException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    //Function for testing connection.
+//    public static void main(String[] args) throws SQLException{
+//        DatabaseConnector databaseConnector = new DatabaseConnector();
+//
+//        try(Connection connection = databaseConnector.getConnection()){
+//            System.out.println("Is it really open"+ !connection.isClosed());
+//        } catch (SqlServerException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 }

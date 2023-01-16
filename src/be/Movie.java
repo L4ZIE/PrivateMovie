@@ -26,11 +26,9 @@ public class Movie {
         this.name = name;
     }
 
-    public double getIMDB() {
-        return IMDB;
-    }
+    public double getIMDB() {return IMDB;}
 
-    public void setIMDB(double IMDB) {
+    public void setIMDB(float IMDB) {
         this.IMDB = IMDB;
     }
 

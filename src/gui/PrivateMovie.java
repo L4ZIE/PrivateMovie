@@ -1,3 +1,5 @@
+package gui;
+
 import dal.SqlServerException;
 import gui.MoviesearchController;
 import javafx.application.Application;
@@ -18,12 +20,11 @@ public class PrivateMovie extends Application {
         //Creating controller instance
             MoviesearchController moviesearchController = new MoviesearchController();
 
-                Parent root = FXMLLoader.load(getClass().getResource("gui/Test.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("Test.fxml"));
                 primaryStage.setTitle("Movies");
                 primaryStage.setScene(new Scene(root));
                 primaryStage.show();
-        //Calling update table to initialize tableview
-                moviesearchController.initialize();
+
     }
 
     public static void main(String[] args) {
