@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cac5f09-b952-49a6-8d65-17976d1960d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/be/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dal/CategoryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/model/CategoryModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/Test.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/DataRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/DataRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/database/DatabaseConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dal/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/SqlServerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/database/SqlServerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PrivateMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/Test.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +61,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Atanas Stoyanov\OneDrive - Erhvervsakademi Sydvest\Dokumenter\GitHub\PrivateMovie\src\gui\view" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

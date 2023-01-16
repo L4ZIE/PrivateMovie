@@ -1,13 +1,10 @@
-package gui;
+package gui.controllers;
 
 
 import be.DataRoute;
 import be.Movie;
-import dal.MovieDAO;
 
-import dal.SqlServerException;
-import javafx.beans.Observable;
-import javafx.collections.FXCollections;
+import dal.database.SqlServerException;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,8 +15,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class MoviesearchController implements Initializable {
