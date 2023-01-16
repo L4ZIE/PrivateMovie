@@ -5,21 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cac5f09-b952-49a6-8d65-17976d1960d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/microsoft_sqlserver_mssql_jdbc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/microsoft_sqlserver_mssql_jdbc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrivateMovie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PrivateMovie.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateMovie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/MoviesearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/PrivateMovie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/Test.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/DataAccessObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/DatabaseConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/DatabaseConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/MoviesearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/MoviesearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/Test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MoviesearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/DataRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/DataRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MoviesearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PrivateMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Test.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,27 +47,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/klari/.jdks/javafx-sdk-19/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/klari/.jdks/javafx-sdk-19/lib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -63,10 +79,36 @@
       <updated>1673531351564</updated>
       <workItem from="1673531352772" duration="7000" />
       <workItem from="1673531369236" duration="2546000" />
+      <workItem from="1673534260824" duration="164000" />
+      <workItem from="1673534459949" duration="74000" />
+      <workItem from="1673534547776" duration="1822000" />
+      <workItem from="1673553923925" duration="1288000" />
+      <workItem from="1673616410113" duration="7203000" />
+      <workItem from="1673794145620" duration="2000" />
+      <workItem from="1673794183746" duration="275000" />
+      <workItem from="1673794471861" duration="1853000" />
+      <workItem from="1673796353358" duration="2326000" />
+      <workItem from="1673799077507" duration="76000" />
+      <workItem from="1673815360042" duration="782000" />
+      <workItem from="1673819274122" duration="205000" />
+      <workItem from="1673863934998" duration="948000" />
+      <workItem from="1673864960790" duration="1000" />
+      <workItem from="1673865804802" duration="2362000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dal/MovieDAO.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

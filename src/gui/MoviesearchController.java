@@ -1,27 +1,40 @@
 package gui;
 
 
+import be.DataRoute;
 import be.Movie;
-import dal.DataAccessObject;
+import dal.MovieDAO;
 
+import dal.SqlServerException;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class MoviesearchController {
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
-    @FXML
-    private TableColumn<?, ?> castTableColumn;
-
-    @FXML
-    private TableColumn<?, ?> descriptionTableColumn;
-
-    @FXML
-    private TableColumn<?, ?> genreTableColumn;
+public class MoviesearchController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> imdbTableColumn;
+    private TableColumn<Movie, String> castTableColumn;
+
+    @FXML
+    private TableColumn<Movie, String> descriptionTableColumn;
+
+    @FXML
+    private TableColumn<Movie, String> genreTableColumn;
+
+    @FXML
+    private TableColumn<Movie, Double> imdbTableColumn;
 
     @FXML
     private TextField keywordsTextField;
@@ -31,14 +44,31 @@ public class MoviesearchController {
 
 
     @FXML
-    private TableColumn<?, ?> nameTableColumn;
+    private TableColumn<Movie, String> nameTableColumn;
 
     /*
-    Function that updates the list with the new movie object created from data fetched from the database.
+    Function that updates the list with all movie objects created from data fetched from the database.
      */
-    public void UpdateTable(){
-        Movie selectedMovie = DataAccessObject.GetMovie();
-        movieTableView.getItems().add(selectedMovie);
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        imdbTableColumn.setCellValueFactory(new PropertyValueFactory<>("IMDB"));
+        genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
+        castTableColumn.setCellValueFactory(new PropertyValueFactory<>("Cast"));
+        descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
+        try {
+            updateTable();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (SqlServerException e) {
+            throw new RuntimeException(e);
+        }
     }
+    public void updateTable() throws SQLException, SqlServerException {
+        DataRoute dataRoute = new DataRoute();
+        ObservableList<Movie> allMovies = dataRoute.routeMovie();
 
+        //Displaying movies as table view rows
+            movieTableView.setItems(allMovies);
+    }
 }
