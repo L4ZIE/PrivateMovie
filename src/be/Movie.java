@@ -9,12 +9,16 @@ public class Movie {
         private String cast;
         private String description;
 
-        public Movie( String name, double IMDB, String genre, String cast, String description){
+        private String path;
+
+
+        public Movie( String name, double IMDB, String genre ,String path ,  String cast, String description){
             this.name = name;
             this.IMDB = IMDB;
             this.genre = genre;
             this.cast = cast;
             this.description = description;
+           this.path = path;
            // this.id =  -- TO DO -- make id generator for movie ID
         }
 
@@ -54,5 +58,10 @@ public class Movie {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public String getPath(){
+            return path;
+    }public void setPath(String path){
+            this.path = path;
     }
 }

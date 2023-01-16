@@ -25,7 +25,7 @@ public class PrivateMovie extends Application {
                 primaryStage.setScene(new Scene(root));
                 primaryStage.show();
 
-    }
+    }x`
 
     public static void main(String[] args) {
         launch(args);
