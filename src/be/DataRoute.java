@@ -1,13 +1,12 @@
 package be;
 
 import dal.MovieDAO;
-import dal.SqlServerException;
+import dal.database.SqlServerException;
 import javafx.collections.ObservableList;
 
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 //Class for sending data from DAO to GUI.
 public class DataRoute {
     MovieDAO movieDAO = new MovieDAO();

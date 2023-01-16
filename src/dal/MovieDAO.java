@@ -1,6 +1,8 @@
 package dal;
 
 import be.Movie;
+import dal.database.DatabaseConnector;
+import dal.database.SqlServerException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -8,9 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /*Data access object is a class in which the program transforms the data from the database into an instance of the
 movie class, also contains function for sending the private instance of the movie to a method in the gui layer that
