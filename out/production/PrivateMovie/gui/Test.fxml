@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -9,20 +10,36 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MoviesearchController">
     <children>
-        <TableView fx:id="movieTableView" layoutX="30.0" layoutY="74.0" prefHeight="502.0" prefWidth="1020.0">
+        <TableView fx:id="movieTableView" layoutX="30.0" layoutY="74.0" prefHeight="486.0" prefWidth="469.0">
             <columns>
-                <TableColumn fx:id="nameTableColumn" prefWidth="196.0" text="Name" />
-                <TableColumn fx:id="imdbTableColumn" prefWidth="78.0" text="IMDB" />
-                <TableColumn fx:id="genreTableColumn" prefWidth="150.0" text="Genre" />
-                <TableColumn fx:id="castTableColumn" prefWidth="179.0" text="Cast" />
-                <TableColumn fx:id="descriptionTableColumn" prefWidth="416.0" text="Description" />
+                <TableColumn fx:id="nameTableColumn" prefWidth="123.19994735717773" text="Name" />
+                <TableColumn fx:id="imdbTableColumn" prefWidth="46.4000244140625" text="IMDB" />
+                <TableColumn fx:id="genreTableColumn" prefWidth="76.00001525878906" text="Category" />
+                <TableColumn fx:id="castTableColumn" prefWidth="103.199951171875" text="Cast" />
+                <TableColumn fx:id="descriptionTableColumn" prefWidth="117.79998779296875" text="Description" />
             </columns>
         </TableView>
-        <Label layoutX="30.0" layoutY="41.0" text="Search movie">
+        <Label layoutX="30.0" layoutY="41.0" text="Search Movie">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-        <TextField fx:id="keywordsTextField" layoutX="140.0" layoutY="39.0" prefHeight="25.0" prefWidth="909.0" promptText="Keywords..." />
+        <TextField fx:id="movieSearchBox" layoutX="140.0" layoutY="39.0" prefHeight="25.0" prefWidth="330.0" promptText="Keywords..." />
+      <TableView fx:id="categoryTableView" layoutX="542.0" layoutY="74.0" prefHeight="486.0" prefWidth="515.0">
+         <columns>
+            <TableColumn fx:id="categoryTableColumn" prefWidth="514.2000122070312" text="Category" />
+         </columns>
+      </TableView>
+      <Label layoutX="542.0" layoutY="41.0" text="Search Category">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="categorySearchBox" layoutX="652.0" layoutY="39.0" prefHeight="25.0" prefWidth="330.0" promptText="Keywords..." />
+      <Button fx:id="addMovieButton" layoutX="30.0" layoutY="567.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="removeMovieButton" layoutX="93.0" layoutY="567.0" mnemonicParsing="false" text="Remove" />
+      <Button fx:id="addCategoryButton" layoutX="542.0" layoutY="567.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="removeCategoryButton" layoutX="606.0" layoutY="567.0" mnemonicParsing="false" text="Remove" />
+      <Button fx:id="playMovieButton" layoutX="172.0" layoutY="567.0" mnemonicParsing="false" text="Play" />
     </children>
 </Pane>

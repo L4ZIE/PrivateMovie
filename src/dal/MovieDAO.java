@@ -47,7 +47,7 @@ public class MovieDAO {
                     Date lastView = resultSet.getDate("Last View");
 
                     //Creating movie object
-                    Movie movie = new Movie(name, rating, genre, cast, description);
+                    Movie movie = new Movie(name, rating, genre, path, cast, description);
 
                     //Adding movie object to list of all movies
                     allMovies.add(movie);
