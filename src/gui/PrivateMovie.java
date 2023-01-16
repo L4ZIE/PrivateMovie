@@ -20,12 +20,10 @@ public class PrivateMovie extends Application {
         //Creating controller instance
             MoviesearchController moviesearchController = new MoviesearchController();
 
-
                 Parent root = FXMLLoader.load(getClass().getResource("Test.fxml"));
                 primaryStage.setTitle("Movies");
                 primaryStage.setScene(new Scene(root));
                 primaryStage.show();
-        //Calling update table to initialize tableview
 
     }
 

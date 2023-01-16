@@ -51,6 +51,9 @@ public class MoviesearchController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+       // initialization method for tableview
+
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
         imdbTableColumn.setCellValueFactory(new PropertyValueFactory<>("IMDB"));
         genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
