@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="881b7c23-fced-4f39-98d6-482abdbdf2c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/doc/README.LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/doc/README.icons" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/doc/copyright" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/doc/gpl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/doc/lgpl-3.0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/jna-5.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/jna-platform-5.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/vlcj-4.7.1-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/vlcj-4.7.1-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/vlcj-4.7.1-test-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/vlcj-4.7.1-tests.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/vlcj-4.7.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1/vlcj-natives-4.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vlcj_4_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/PlayerFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dal/moviefiles/placeholder.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrivateMovie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PrivateMovie.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/DataRoute.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/DataRoute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/DatabaseConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/SqlServerException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/MoviesearchController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/Test.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PrivateMovie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/Test.fxml" afterDir="false" />
     </list>
@@ -56,6 +28,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KEETRSzHOHRv9UaU7vAizMpSbb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -90,6 +65,26 @@
   &lt;/component&gt;
 =======
 }</component>
+  <component name="RunManager">
+    <configuration name="PrivateMovie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.PrivateMovie" />
+      <module name="PrivateMovie" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PrivateMovie" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -120,6 +115,7 @@
       <workItem from="1673870747654" duration="501000" />
       <workItem from="1673871668342" duration="96000" />
       <workItem from="1673959691987" duration="322000" />
+      <workItem from="1673962869294" duration="5376000" />
     </task>
     <servers />
   </component>

@@ -2,6 +2,7 @@ package gui.controllers;
 
 
 import be.DataRoute;
+import be.Filter;
 import be.Movie;
 
 import be.PlayerFunctions;
@@ -34,7 +35,7 @@ public class MoviesearchController implements Initializable {
     private TableColumn<Movie, Double> imdbTableColumn;
 
     @FXML
-    private TextField keywordsTextField;
+    private TextField movieSearchBox;
 
     @FXML
     private TableView<Movie> movieTableView;
@@ -47,6 +48,10 @@ public class MoviesearchController implements Initializable {
     private Button playMovieButton;
 
     PlayerFunctions playerFunctions = new PlayerFunctions();
+
+    Filter filter = new Filter();
+
+    DataRoute dataRoute = new DataRoute();
 
     /*
     Function that updates the list with all movie objects created from data fetched from the database.
@@ -62,27 +67,34 @@ public class MoviesearchController implements Initializable {
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
 
         try {
-            updateTable();
+            updateTable(dataRoute.routeMovie());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (SqlServerException e) {
             throw new RuntimeException(e);
         }
     }
-    public void updateTable() throws SQLException, SqlServerException {
-        DataRoute dataRoute = new DataRoute();
-        ObservableList<Movie> allMovies = dataRoute.routeMovie();
-
+    public void updateTable(ObservableList<Movie> selectedMovies) throws SQLException, SqlServerException {
         //Displaying movies as table view rows
-            movieTableView.setItems(allMovies);
+            movieTableView.setItems(selectedMovies);
     }
 
 
-
+    //Function that calls media player methods on button click
     public void playButtonOnPress(){
         if (movieTableView.getSelectionModel().getSelectedItem() != null){
             Movie selectedMovie = movieTableView.getSelectionModel().getSelectedItem();
             playerFunctions.playVideo(selectedMovie.getPath());
         }
+    }
+    //Sends user input to the search function
+    public void searchForName() throws SQLException, SqlServerException {
+        updateTable(filter.searchMovie(movieSearchBox.getText(), "name"));
+    }
+    public void searchForCast() throws SQLException, SqlServerException {
+        updateTable(filter.searchMovie(movieSearchBox.getText(), "cast"));
+    }
+    public void searchForCategory() throws SQLException, SqlServerException {
+        updateTable(filter.searchMovie(movieSearchBox.getText(), "category"));
     }
 }
