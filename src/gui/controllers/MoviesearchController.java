@@ -4,10 +4,12 @@ package gui.controllers;
 import be.DataRoute;
 import be.Movie;
 
+import be.PlayerFunctions;
 import dal.database.SqlServerException;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -41,12 +43,16 @@ public class MoviesearchController implements Initializable {
     @FXML
     private TableColumn<Movie, String> nameTableColumn;
 
+    @FXML
+    private Button playMovieButton;
+
+    PlayerFunctions playerFunctions = new PlayerFunctions();
+
     /*
     Function that updates the list with all movie objects created from data fetched from the database.
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
        // initialization method for tableview
 
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
@@ -54,6 +60,7 @@ public class MoviesearchController implements Initializable {
         genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
         castTableColumn.setCellValueFactory(new PropertyValueFactory<>("Cast"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
+
         try {
             updateTable();
         } catch (SQLException e) {
@@ -68,5 +75,14 @@ public class MoviesearchController implements Initializable {
 
         //Displaying movies as table view rows
             movieTableView.setItems(allMovies);
+    }
+
+
+
+    public void playButtonOnPress(){
+        if (movieTableView.getSelectionModel().getSelectedItem() != null){
+            Movie selectedMovie = movieTableView.getSelectionModel().getSelectedItem();
+            playerFunctions.playVideo(selectedMovie.getPath());
+        }
     }
 }
