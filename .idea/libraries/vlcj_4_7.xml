@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="vlcj-4.7">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/.idea/libraries/vlcj-4.7.1" recursive="false" type="SOURCES" />
+  </library>
+</component>

@@ -1,5 +1,6 @@
 package gui;
 
+import be.PlayerFunctions;
 import dal.database.SqlServerException;
 import gui.controllers.MoviesearchController;
 import javafx.application.Application;
@@ -23,7 +24,6 @@ public class PrivateMovie extends Application {
                 primaryStage.setTitle("Movies");
                 primaryStage.setScene(new Scene(root));
                 primaryStage.show();
-
     }
 
     public static void main(String[] args) {
