@@ -71,17 +71,20 @@ public class MoviesearchController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
        // initialization method for Movies TableView
+
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
         imdbTableColumn.setCellValueFactory(new PropertyValueFactory<>("IMDB"));
         genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
         castTableColumn.setCellValueFactory(new PropertyValueFactory<>("Cast"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
+
         DataRoute dataRoute = new DataRoute();
 
         try {
             ObservableList<Movie> allMovies = dataRoute.routeMovie();
             updateMovieTable(allMovies);
         } catch (SQLException | SqlServerException e) {
+
             throw new RuntimeException(e);
         }
 
@@ -94,6 +97,7 @@ public class MoviesearchController implements Initializable {
         }
 
     }
+
     public void updateMovieTable(ObservableList<Movie> selectedMovies) throws SQLException, SqlServerException {
 
         //Displaying movies as table view rows
@@ -164,5 +168,6 @@ public class MoviesearchController implements Initializable {
     }
     public void setCategory() throws IOException{
         openSetCategory();
+
     }
 }
