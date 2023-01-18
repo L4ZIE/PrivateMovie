@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="881b7c23-fced-4f39-98d6-482abdbdf2c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrivateMovie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PrivateMovie.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PrivateMovie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/Test.fxml" afterDir="false" />
     </list>
@@ -116,6 +121,7 @@
       <workItem from="1673871668342" duration="96000" />
       <workItem from="1673959691987" duration="322000" />
       <workItem from="1673962869294" duration="5376000" />
+      <workItem from="1674052333146" duration="635000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="258.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.AddCategoryController">
+   <children>
+      <Label layoutX="100.0" layoutY="20.0" prefHeight="50.0" prefWidth="250.0" text="Add the movie to the category" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="sumbitButton" layoutX="46.0" layoutY="218.0" mnemonicParsing="false" onAction="#sumbitCategory" text="Sumbit" />
+      <Button fx:id="closeButton" layoutX="334.0" layoutY="218.0" mnemonicParsing="false" onAction="#close" text="Close" />
+      <TextField fx:id="categoryName" layoutX="136.0" layoutY="104.0" promptText="categoryName" />
+   </children>
+</AnchorPane>

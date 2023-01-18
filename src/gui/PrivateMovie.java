@@ -23,6 +23,7 @@ public class PrivateMovie extends Application {
                 Parent root = FXMLLoader.load(getClass().getResource("view/Test.fxml"));
                 primaryStage.setTitle("Movies");
                 primaryStage.setScene(new Scene(root));
+                primaryStage.setResizable(false);
                 primaryStage.show();
     }
 
