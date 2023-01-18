@@ -1,24 +1,37 @@
 package gui.controllers;
 
 
+import be.Category;
 import be.DataRoute;
 import be.Movie;
 
 import dal.database.SqlServerException;
+import gui.PrivateMovie;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+
+
 public class MoviesearchController implements Initializable {
 
+   @FXML
+   public TableView<Category> categoryTableView;
+  @FXML
+  public TableColumn<Category, String> categoryTableColumn;
     @FXML
     private TableColumn<Movie, String> castTableColumn;
 
@@ -36,10 +49,9 @@ public class MoviesearchController implements Initializable {
 
     @FXML
     private TableView<Movie> movieTableView;
-
-
     @FXML
     private TableColumn<Movie, String> nameTableColumn;
+
 
     /*
     Function that updates the list with all movie objects created from data fetched from the database.
@@ -47,26 +59,91 @@ public class MoviesearchController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-       // initialization method for tableview
-
+       // initialization method for Movies TableView
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
         imdbTableColumn.setCellValueFactory(new PropertyValueFactory<>("IMDB"));
         genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
         castTableColumn.setCellValueFactory(new PropertyValueFactory<>("Cast"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
         try {
-            updateTable();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (SqlServerException e) {
+            updateMovieTable();
+        } catch (SQLException | SqlServerException e) {
             throw new RuntimeException(e);
         }
+
+        // initialization method for Categories TableView
+        categoryTableColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        try {
+            updateCategoryTable();
+        } catch (SQLException | SqlServerException e) {
+            throw new RuntimeException(e);
+        }
+
     }
-    public void updateTable() throws SQLException, SqlServerException {
+    public void updateMovieTable() throws SQLException, SqlServerException {
         DataRoute dataRoute = new DataRoute();
         ObservableList<Movie> allMovies = dataRoute.routeMovie();
 
+        System.out.println(allMovies);
+
         //Displaying movies as table view rows
             movieTableView.setItems(allMovies);
+
+    }
+
+
+    public void updateCategoryTable() throws SQLException, SqlServerException{
+        DataRoute dataRoute = new DataRoute();
+        ObservableList<Category> allCategories = dataRoute.routeCategory();
+        System.out.println(allCategories);
+        categoryTableView.setItems(allCategories);
+    }
+
+
+    public void openAddCategory() throws IOException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddCategory.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageAddCategory = new Stage();
+       // listOfStages.add(stageAddSong);
+        stageAddCategory.setTitle("Add a category");
+        stageAddCategory.setScene(scene);
+        stageAddCategory.show();
+        stageAddCategory.setResizable(false);
+    }
+    public void addCategory() throws IOException{
+        openAddCategory();
+    }
+    public void openRemoveCategory() throws IOException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/RemoveCategory.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageAddCategory = new Stage();
+        // listOfStages.add(stageAddSong);
+        stageAddCategory.setTitle("Remove a category");
+        stageAddCategory.setScene(scene);
+        stageAddCategory.show();
+        stageAddCategory.setResizable(false);
+    }
+    public  void removeCategory() throws IOException{
+        openRemoveCategory();
+    }
+
+    public void refreshTable() throws SQLException, SqlServerException {
+        updateCategoryTable();
+        updateMovieTable();
+    }
+
+
+    public void openSetCategory() throws IOException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/SetCategory.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageAddCategory = new Stage();
+        // listOfStages.add(stageAddSong);
+        stageAddCategory.setTitle("Set a category");
+        stageAddCategory.setScene(scene);
+        stageAddCategory.show();
+        stageAddCategory.setResizable(false);
+    }
+    public void setCategory() throws IOException{
+        openSetCategory();
     }
 }

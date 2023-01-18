@@ -1,5 +1,7 @@
 package be;
 
+import bll.IdGen;
+
 public class Movie {
 
         private int id = 0;
@@ -12,14 +14,22 @@ public class Movie {
         private String path;
 
 
-        public Movie( String name, double IMDB, String genre ,String path ,  String cast, String description){
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Movie(String name, double IMDB, String genre , String path , String cast, String description){
             this.name = name;
             this.IMDB = IMDB;
             this.genre = genre;
             this.cast = cast;
             this.description = description;
            this.path = path;
-           // this.id =  -- TO DO -- make id generator for movie ID
+            this.id = IdGen.createMovieId();
         }
 
     public String getName() {

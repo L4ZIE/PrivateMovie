@@ -56,4 +56,37 @@ public class MovieDAO {
             return allMovies;
         }
     }
+    public ObservableList<String>getMovieName() {
+        DatabaseConnector dbConnector = new DatabaseConnector();
+        //Opening connection
+        try (Connection connection = dbConnector.getConnection()) {
+            ObservableList<String> allNames = FXCollections.observableArrayList();
+
+            String sqlGetCategories = "SELECT * FROM Movie;";
+
+            Statement statement = connection.createStatement();
+
+
+            //Executing sql statement to get all movies
+            if (statement.execute(sqlGetCategories)) {
+                //Saving result set
+                ResultSet resultSet = statement.getResultSet();
+
+                //Saving result data as variables
+                while (resultSet.next()) {
+                    String name = resultSet.getString("Name");
+
+                    //Creating category object
+
+
+                    //Adding movie object to list of all movies
+                    allNames.add(name);
+                }
+            }
+            return allNames;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
