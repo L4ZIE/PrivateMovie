@@ -3,8 +3,10 @@ package gui.controllers;
 
 import be.Category;
 import be.DataRoute;
+import be.Filter;
 import be.Movie;
 
+import be.PlayerFunctions;
 import dal.database.SqlServerException;
 import gui.PrivateMovie;
 import javafx.collections.ObservableList;
@@ -13,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -45,13 +48,21 @@ public class MoviesearchController implements Initializable {
     private TableColumn<Movie, Double> imdbTableColumn;
 
     @FXML
-    private TextField keywordsTextField;
+    private TextField movieSearchBox;
 
     @FXML
     private TableView<Movie> movieTableView;
     @FXML
     private TableColumn<Movie, String> nameTableColumn;
 
+    @FXML
+    private Button playMovieButton;
+
+    PlayerFunctions playerFunctions = new PlayerFunctions();
+
+    Filter filter = new Filter();
+
+    DataRoute dataRoute = new DataRoute();
 
     /*
     Function that updates the list with all movie objects created from data fetched from the database.
@@ -65,8 +76,11 @@ public class MoviesearchController implements Initializable {
         genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
         castTableColumn.setCellValueFactory(new PropertyValueFactory<>("Cast"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
+        DataRoute dataRoute = new DataRoute();
+
         try {
-            updateMovieTable();
+            ObservableList<Movie> allMovies = dataRoute.routeMovie();
+            updateMovieTable(allMovies);
         } catch (SQLException | SqlServerException e) {
             throw new RuntimeException(e);
         }
@@ -80,14 +94,10 @@ public class MoviesearchController implements Initializable {
         }
 
     }
-    public void updateMovieTable() throws SQLException, SqlServerException {
-        DataRoute dataRoute = new DataRoute();
-        ObservableList<Movie> allMovies = dataRoute.routeMovie();
-
-        System.out.println(allMovies);
+    public void updateMovieTable(ObservableList<Movie> selectedMovies) throws SQLException, SqlServerException {
 
         //Displaying movies as table view rows
-            movieTableView.setItems(allMovies);
+            movieTableView.setItems(selectedMovies);
 
     }
 
@@ -99,6 +109,15 @@ public class MoviesearchController implements Initializable {
         categoryTableView.setItems(allCategories);
     }
 
+    public void searchForName() throws SQLException, SqlServerException {
+        updateMovieTable(filter.searchMovie(movieSearchBox.getText(), "name"));
+    }
+    public void searchForCast() throws SQLException, SqlServerException {
+        updateMovieTable(filter.searchMovie(movieSearchBox.getText(), "cast"));
+    }
+    public void searchForCategory() throws SQLException, SqlServerException {
+        updateMovieTable(filter.searchMovie(movieSearchBox.getText(), "category"));
+    }
 
     public void openAddCategory() throws IOException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddCategory.fxml"));
@@ -129,7 +148,7 @@ public class MoviesearchController implements Initializable {
 
     public void refreshTable() throws SQLException, SqlServerException {
         updateCategoryTable();
-        updateMovieTable();
+        //updateMovieTable();
     }
 
 

@@ -43,5 +43,8 @@
       <Button fx:id="playMovieButton" layoutX="172.0" layoutY="567.0" mnemonicParsing="false" text="Play" />
       <Button fx:id="setCategory" layoutX="234.0" layoutY="567.0" mnemonicParsing="false" onAction="#setCategory" prefHeight="25.0" prefWidth="89.0" text="Set Category" />
       <Button fx:id="addCategoryButton1" layoutX="966.0" layoutY="567.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh tables" />
+        <Button fx:id="searchName" layoutX="140.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchForName" text="Name" />
+        <Button fx:id="searchCast" layoutX="191.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchForCast" text="Cast" />
+        <Button fx:id="searchCategory" layoutX="233.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchForCategory" text="Category" />
     </children>
 </Pane>

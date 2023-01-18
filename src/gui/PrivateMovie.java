@@ -1,5 +1,6 @@
 package gui;
 
+import be.PlayerFunctions;
 import dal.database.SqlServerException;
 import gui.controllers.MoviesearchController;
 import javafx.application.Application;
