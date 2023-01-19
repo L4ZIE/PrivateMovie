@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="881b7c23-fced-4f39-98d6-482abdbdf2c0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/AddMovieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/AddMovieController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/MovieDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controllers/AddMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/AddMovieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controllers/SetPersonalRatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/SetPersonalRatingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/Test.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

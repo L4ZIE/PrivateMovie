@@ -138,9 +138,11 @@ public class MoviesearchController implements Initializable {
     }
 
     public void playMovie() throws SQLException {
-        Movie selectedMovie = movieTableView.getSelectionModel().getSelectedItem();
-        MovieDAO.updateWatchTime(selectedMovie.getName());
-        playerFunctions.playVideo(selectedMovie.getPath());
+        if (movieTableView.getSelectionModel().getSelectedItem() != null) {
+            Movie selectedMovie = movieTableView.getSelectionModel().getSelectedItem();
+            MovieDAO.updateWatchTime(selectedMovie.getName());
+            playerFunctions.playVideo(selectedMovie.getPath());
+        }
     }
     public void openAddCategory() throws IOException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddCategory.fxml"));
