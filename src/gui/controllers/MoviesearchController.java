@@ -129,6 +129,9 @@ public class MoviesearchController implements Initializable {
         updateMovieTable(filter.searchMovie(movieSearchBox.getText(), "category"));
     }
 
+    public void playMovie(){
+        playerFunctions.playVideo(movieTableView.getSelectionModel().getSelectedItem().getPath());
+    }
     public void openAddCategory() throws IOException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddCategory.fxml"));
         Scene scene = new Scene(loader.load());
@@ -158,7 +161,7 @@ public class MoviesearchController implements Initializable {
 
     public void refreshTable() throws SQLException, SqlServerException {
         updateCategoryTable();
-       // updateMovieTable();
+        updateMovieTable(MovieDAO.getAllMovies());
     }
 
 
@@ -226,5 +229,15 @@ public class MoviesearchController implements Initializable {
         stageAddCategory.show();
         stageAddCategory.setResizable(false);
         updateMovieTable(dataRoute.routeMovie());
+    }
+
+    public void openRemoveMovie() throws IOException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/RemoveMovie.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageAddCategory = new Stage();
+        stageAddCategory.setTitle("Remove a movie");
+        stageAddCategory.setScene(scene);
+        stageAddCategory.show();
+        stageAddCategory.setResizable(false);
     }
 }
