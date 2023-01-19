@@ -13,6 +13,8 @@ public class Movie {
 
         private String path;
 
+        private String personalRating;
+
 
     public int getId() {
         return id;
@@ -22,14 +24,23 @@ public class Movie {
         this.id = id;
     }
 
-    public Movie(String name, double IMDB, String genre , String path , String cast, String description){
+    public String getPersonalRating() {
+        return personalRating;
+    }
+
+    public void setPersonalRating(String personalRating) {
+        this.personalRating = personalRating;
+    }
+
+    public Movie(int movieID, String name, double IMDB, String genre , String path , String cast, String description, String personalRating){
             this.name = name;
             this.IMDB = IMDB;
             this.genre = genre;
             this.cast = cast;
             this.description = description;
            this.path = path;
-            this.id = IdGen.createMovieId();
+            this.id = movieID;
+            this.personalRating=personalRating;
         }
 
     public String getName() {
