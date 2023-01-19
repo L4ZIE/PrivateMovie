@@ -41,7 +41,6 @@ public class AddCategoryController implements Initializable {
         stage.close();
     }
     public void close(){
-
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }

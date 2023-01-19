@@ -170,4 +170,19 @@ public class MoviesearchController implements Initializable {
         openSetCategory();
 
     }
+
+    public void playMovie(){
+        playerFunctions.playVideo(movieTableView.getSelectionModel().getSelectedItem().getPath());
+    }
+
+    public void openAddMovie() throws IOException, SQLException, SqlServerException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddMovie.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageAddCategory = new Stage();
+        stageAddCategory.setTitle("Add a movie");
+        stageAddCategory.setScene(scene);
+        stageAddCategory.show();
+        stageAddCategory.setResizable(false);
+        updateMovieTable(dataRoute.routeMovie());
+    }
 }

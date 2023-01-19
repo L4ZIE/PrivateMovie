@@ -1,5 +1,6 @@
 package dal;
 
+import be.Category;
 import be.Movie;
 import dal.database.DatabaseConnector;
 import dal.database.SqlServerException;
@@ -87,6 +88,27 @@ public class MovieDAO {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    //Connects to DB and inserts new movie into the Movie table
+    public static void postNewMovie(Movie newMovie) throws SQLException{
+        //Creating dbConnector instance
+        DatabaseConnector dbConnector = new DatabaseConnector();
+        try(Connection connection = dbConnector.getConnection()) {
+            int movieID = newMovie.getId();
+            String movieName = newMovie.getName();
+            Double movieRating = newMovie.getIMDB();
+            String movieCategory = newMovie.getGenre();
+            String moviePath = newMovie.getPath();
+            String movieCast = newMovie.getCast();
+            String movieDescription = newMovie.getDescription();
+            String sql = "INSERT INTO Movie VALUES("+movieID+",'"+movieName+"', "+movieRating+", '"+movieCategory+"', '"+moviePath+"', '"+movieCast+"', '"+movieDescription+"', null, null)";
+            Statement statement = connection.createStatement();
+            if(statement.execute(sql)){
+                ResultSet resultSet = statement.getResultSet();
+                System.out.println("Inserted correctly");
+            }
         }
     }
 }

@@ -26,9 +26,9 @@ public class Movie {
             this.name = name;
             this.IMDB = IMDB;
             this.genre = genre;
-            this.cast = cast;
+            this.cast = cast; 
             this.description = description;
-           this.path = path;
+            this.path = path;
             this.id = IdGen.createMovieId();
         }
 
