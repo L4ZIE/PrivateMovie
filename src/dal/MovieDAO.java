@@ -124,4 +124,18 @@ public class MovieDAO {
             }
         }
     }
+
+    public static void removeMovie(String index) throws SQLException{
+        //Creating dbConnector instance
+        DatabaseConnector dbConnector = new DatabaseConnector();
+        try(Connection connection = dbConnector.getConnection()) {
+            String sql = "Delete FROM Movie where Name='" + index + "';";
+            System.out.println(sql);
+            Statement statement = connection.createStatement();
+            if(statement.execute(sql)){
+                ResultSet resultSet = statement.getResultSet();
+                System.out.println("Removed correctly");
+            }
+        }
+    }
 }
