@@ -17,10 +17,10 @@ public class CatMov {
         this.catMovID = catMovID;
     }
 
-    public CatMov(int catID, int movID) {
+    public CatMov(int catMovId, int catID, int movID) {
         this.catID = catID;
         this.movID = movID;
-        this.catMovID= IdGen.createCatMovId();
+        this.catMovID= catMovId;
     }
 
     public int getCatID() {

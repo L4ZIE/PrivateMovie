@@ -37,7 +37,7 @@ public class RemoveCategoryController implements Initializable {
         stage.close();
     }
     public void removeCategory(ActionEvent actionEvent) throws SQLException {
-        int selectedIndex = categoriesBox.getSelectionModel().getSelectedIndex()+1;
+        String selectedIndex = categoriesBox.getSelectionModel().getSelectedItem().toString();
         CategoryDAO.removeCategory(selectedIndex);
         categoriesBox.setItems(FXCollections.observableArrayList(categoryDAO.getCategoryName()));
         Stage stage = (Stage) closeButton.getScene().getWindow();

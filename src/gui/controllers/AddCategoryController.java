@@ -35,7 +35,15 @@ public class AddCategoryController implements Initializable {
     }
 
     public void sumbitCategory(ActionEvent actionEvent) throws SQLException, SqlServerException {
-        Category category=new Category(categoryName.getText());
+
+        Category category;
+        if (categoryDAO.getAllCategories().size()>0) {
+             category = new Category(categoryDAO.getAllCategories().get(categoryDAO.getAllCategories().size() - 1).getId() + 1, categoryName.getText());
+        }else {
+             category = new Category( 1, categoryName.getText());
+
+        }
+
         categoryDAO.postNewCategory(category);
         Stage stage = (Stage) sumbitButton.getScene().getWindow();
         stage.close();

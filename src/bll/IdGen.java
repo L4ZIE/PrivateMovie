@@ -1,13 +1,30 @@
 package bll;
 
+import be.Category;
 import dal.CatMovDAO;
+import dal.CategoryDAO;
+import dal.database.SqlServerException;
+
+import java.sql.SQLException;
 
 public class IdGen {
 
     private static int movieId = 0;
 
 
-    private static int categoryId = 0;
+    private static int categoryId;
+
+    static {
+        try {
+
+            categoryId = CategoryDAO.getAllCategories().size();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (SqlServerException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private static int CatMovId = CatMovDAO.getCatMov().size();
 
     public static int createCatMovId() {

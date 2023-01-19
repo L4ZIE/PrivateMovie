@@ -6,12 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="881b7c23-fced-4f39-98d6-482abdbdf2c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrivateMovie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PrivateMovie.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/CatMov.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/CatMov.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/DataRoute.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/DataRoute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Filter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/bll/IdGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/bll/IdGen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/CatMovDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/CatMovDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/CategoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/CategoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/AddCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/AddCategoryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/RemoveCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/RemoveCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/SetCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/SetCategoryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PrivateMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/CatMov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/CatMov.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/IdGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/IdGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/CatMovDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/CatMovDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controllers/AddCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/AddCategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controllers/RemoveCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/RemoveCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controllers/SetCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/SetCategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/Test.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +90,11 @@
   &lt;/component&gt;
 =======
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Atanas Stoyanov\OneDrive - Erhvervsakademi Sydvest\Dokumenter\GitHub\PrivateMovie\src\gui\view" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="PrivateMovie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.PrivateMovie" />
@@ -122,6 +147,8 @@
       <workItem from="1673959691987" duration="322000" />
       <workItem from="1673962869294" duration="5376000" />
       <workItem from="1674052333146" duration="635000" />
+      <workItem from="1674081878643" duration="13340000" />
+      <workItem from="1674095495299" duration="819000" />
     </task>
     <servers />
   </component>

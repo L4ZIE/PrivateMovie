@@ -34,12 +34,13 @@ public class CatMovDAO {
 
                 //Saving result data as variables
                 while (resultSet.next()) {
+                    int catMoveID=resultSet.getInt("ID");
                     int catId = resultSet.getInt("CategoryID");
                     int movId = resultSet.getInt("MovieID");
 
 
                     //Creating category object
-                    CatMov catMov=new CatMov(catId,movId);
+                    CatMov catMov=new CatMov(catMoveID,catId,movId);
 
 
                     //Adding movie object to list of all movies

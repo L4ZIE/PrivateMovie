@@ -1,12 +1,11 @@
 package gui.controllers;
 
 
-import be.Category;
-import be.DataRoute;
-import be.Filter;
-import be.Movie;
+import be.*;
 
-import be.PlayerFunctions;
+import dal.CatMovDAO;
+import dal.CategoryDAO;
+import dal.MovieDAO;
 import dal.database.SqlServerException;
 import gui.PrivateMovie;
 import javafx.collections.ObservableList;
@@ -20,11 +19,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -35,11 +37,14 @@ public class MoviesearchController implements Initializable {
    public TableView<Category> categoryTableView;
   @FXML
   public TableColumn<Category, String> categoryTableColumn;
+
     @FXML
     private TableColumn<Movie, String> castTableColumn;
 
     @FXML
     private TableColumn<Movie, String> descriptionTableColumn;
+    @FXML
+    public TableColumn <Movie, String> personalRatingTableColumn;
 
     @FXML
     private TableColumn<Movie, String> genreTableColumn;
@@ -77,6 +82,7 @@ public class MoviesearchController implements Initializable {
         genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
         castTableColumn.setCellValueFactory(new PropertyValueFactory<>("Cast"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
+        personalRatingTableColumn.setCellValueFactory(new PropertyValueFactory<>("PersonalRating"));
 
         DataRoute dataRoute = new DataRoute();
 
@@ -152,7 +158,7 @@ public class MoviesearchController implements Initializable {
 
     public void refreshTable() throws SQLException, SqlServerException {
         updateCategoryTable();
-        //updateMovieTable();
+       // updateMovieTable();
     }
 
 
@@ -169,5 +175,56 @@ public class MoviesearchController implements Initializable {
     public void setCategory() throws IOException{
         openSetCategory();
 
+    }
+
+
+    public void  getPlaylist(MouseEvent mouseEvent) throws SQLException, SqlServerException {
+
+        //Getting selected category name
+        String categorySelection = categoryTableView.getSelectionModel().getSelectedItem().getName();
+
+        //Getting the category from the database to get the CategoryID
+        Category cat= CategoryDAO.getAllCategories().filtered(category -> category.getName().equals(categorySelection)).get(0);
+
+        //Filtering all catMovs to get akk movies related to this Category
+        ObservableList<CatMov> catMovs= CatMovDAO.getCatMov().filtered(catMov -> catMov.getCatID()==cat.getId());
+
+        //Setting the Ids od the related movies
+        List<Integer> ids=new ArrayList<>();
+
+        for (CatMov e:catMovs) {
+            ids.add(e.getMovID());
+        }
+
+        //Filtering all the movies from the database
+        ObservableList<Movie> movies= MovieDAO.getAllMovies().filtered(movie -> ids.contains(movie.getId()));
+
+        //Displaying the table
+        movieTableView.setItems(movies);
+
+    }
+    public void openSetPersonalRating() throws IOException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/SetPersonalRating.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageAddCategory = new Stage();
+        // listOfStages.add(stageAddSong);
+        stageAddCategory.setTitle("Set a category");
+        stageAddCategory.setScene(scene);
+        stageAddCategory.show();
+        stageAddCategory.setResizable(false);
+    }
+
+    public void setPersonalRating() throws IOException {
+        openSetPersonalRating();
+    }
+    public void openAddMovie() throws IOException, SQLException, SqlServerException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddMovie.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageAddCategory = new Stage();
+        stageAddCategory.setTitle("Add a movie");
+        stageAddCategory.setScene(scene);
+        stageAddCategory.show();
+        stageAddCategory.setResizable(false);
+        updateMovieTable(dataRoute.routeMovie());
     }
 }

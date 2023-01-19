@@ -56,6 +56,7 @@ public class CategoryDAO {
         try (Connection connection = dbConnector.getConnection()) {
             ObservableList<Category> allCategories = FXCollections.observableArrayList();
 
+
             String sqlGetCategories = "SELECT * FROM Category;";
 
             Statement statement = connection.createStatement();
@@ -68,10 +69,11 @@ public class CategoryDAO {
 
                 //Saving result data as variables
                 while (resultSet.next()) {
+                    int id=resultSet.getInt("Id");
                     String name = resultSet.getString("Name");
 
                     //Creating category object
-                    Category category = new Category(name);
+                    Category category = new Category(id,name);
 
                     //Adding movie object to list of all movies
                     allCategories.add(category);
@@ -92,11 +94,11 @@ public class CategoryDAO {
             }
         }
     }
-    public static void removeCategory(int index) throws SQLException{
+    public static void removeCategory(String index) throws SQLException{
         //Creating dbConnector instance
         DatabaseConnector dbConnector = new DatabaseConnector();
         try(Connection connection = dbConnector.getConnection()) {
-            String sql = "Delete FROM Category where ID=" + index + ';';
+            String sql = "Delete FROM Category where Name='" + index + "';";
             System.out.println(sql);
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){

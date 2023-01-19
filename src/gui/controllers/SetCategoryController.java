@@ -1,6 +1,8 @@
 package gui.controllers;
 
 import be.CatMov;
+import be.Category;
+import be.Movie;
 import dal.CatMovDAO;
 import dal.CategoryDAO;
 import dal.MovieDAO;
@@ -43,12 +45,27 @@ public class SetCategoryController implements Initializable {
         }
     }
 
-    public void submitBtn(ActionEvent actionEvent) throws SQLException {
+    public void submitBtn(ActionEvent actionEvent) throws SQLException, SqlServerException {
 
-        int catIndex = categoriesBox.getSelectionModel().getSelectedIndex()+1;
-        int movIndex = MoviesBox.getSelectionModel().getSelectedIndex()+1;
+        String catIndex = categoriesBox.getSelectionModel().getSelectedItem().toString();
+        String movIndex = MoviesBox.getSelectionModel().getSelectedItem().toString();
 
-        CatMov catMov=new CatMov(catIndex,movIndex);
+        categoryDAO=new CategoryDAO();
+        Category cat=categoryDAO.getAllCategories().filtered(category -> category.getName().equals(catIndex)).get(0);
+        System.out.println(cat.getId()+""+cat.getName());
+        Movie mov=movieDAO.getAllMovies().filtered(movie -> movie.getName().equals(movIndex)).get(0);
+        System.out.println(mov.getId()+""+mov.getName());
+
+
+
+        CatMov catMov;
+        if (CatMovDAO.getCatMov().size()>0) {
+             catMov = new CatMov(CatMovDAO.getCatMov().get(CatMovDAO.getCatMov().size() - 1).getCatMovID() + 1, cat.getId(), mov.getId());
+
+        }else {
+             catMov = new CatMov( 1, cat.getId(), mov.getId());
+
+        }
 
         CatMovDAO.postNewCatMov(catMov);
         Stage stage = (Stage) closeButton.getScene().getWindow();
