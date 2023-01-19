@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="881b7c23-fced-4f39-98d6-482abdbdf2c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/be/Movie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/AddMovieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/AddMovieController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dal/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controllers/AddMovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/AddMovieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controllers/SetPersonalRatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/SetPersonalRatingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/Test.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -131,6 +137,9 @@
       <workItem from="1674095495299" duration="819000" />
       <workItem from="1674129295256" duration="1203000" />
       <workItem from="1674130523958" duration="353000" />
+      <workItem from="1674133720706" duration="1483000" />
+      <workItem from="1674135240108" duration="3968000" />
+      <workItem from="1674139921204" duration="5878000" />
     </task>
     <servers />
   </component>
@@ -147,5 +156,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/be/PlayerFunctions.java</url>
+          <line>8</line>
+          <properties class="be.PlayerFunctions" method="playVideo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

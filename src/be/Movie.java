@@ -2,6 +2,9 @@ package be;
 
 import bll.IdGen;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Movie {
 
         private int id = 0;
@@ -14,6 +17,8 @@ public class Movie {
         private String path;
 
         private String personalRating;
+
+        private Date lastView;
 
 
     public int getId() {
@@ -32,7 +37,7 @@ public class Movie {
         this.personalRating = personalRating;
     }
 
-    public Movie(int movieID, String name, double IMDB, String genre , String path , String cast, String description, String personalRating){
+    public Movie(int movieID, String name, double IMDB, String genre , String path , String cast, String description, String personalRating, Date lastView){
             this.name = name;
             this.IMDB = IMDB;
             this.genre = genre;
@@ -41,6 +46,7 @@ public class Movie {
            this.path = path;
             this.id = movieID;
             this.personalRating=personalRating;
+            this.lastView = lastView;
         }
 
     public String getName() {
@@ -85,4 +91,8 @@ public class Movie {
     }public void setPath(String path){
             this.path = path;
     }
+
+    public void setLastView(Date newViewDate){this.lastView = newViewDate;}
+    public Date getLastView(){return lastView;}
+
 }

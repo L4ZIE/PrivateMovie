@@ -33,10 +33,10 @@ public class AddMovieController implements Initializable {
              MovieDAO movieDAO=new MovieDAO();
             if (movieDAO.getAllMovies().size()>0) {
                  newMovie = new Movie(movieDAO.getAllMovies().get(movieDAO.getAllMovies().size() - 1).getId() + 1,movieName.getText(), 0.00, "", "src/dal/moviefiles/" + fileName.getText(),
-                        movieCast.getText(), movieDescription.getText(), "");
+                        movieCast.getText(), movieDescription.getText(), null, null);
             }else{
                  newMovie = new Movie(1,movieName.getText(), 0.00, "", "src/dal/moviefiles/" + fileName.getText(),
-                         movieCast.getText(), movieDescription.getText(), "");
+                         movieCast.getText(), movieDescription.getText(), null, null);
             }
             MovieDAO.postNewMovie(newMovie);
             }
