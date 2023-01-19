@@ -29,8 +29,8 @@ public class SetPersonalRatingController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ratingBox.setItems(FXCollections.observableArrayList("BullShit(1)", "Bad(2)","Ok?(3)", "Good(4)", "Must watch!(5)"));
-        ratingBox.setVisibleRowCount(5);
+        ratingBox.setItems(FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10"));
+        ratingBox.setVisibleRowCount(10);
         moviesBox.setItems(FXCollections.observableArrayList(movieDAO.getMovieName()));
         try {
             moviesBox.setVisibleRowCount(movieDAO.getAllMovies().size());

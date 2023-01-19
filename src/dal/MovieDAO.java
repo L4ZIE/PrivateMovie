@@ -5,12 +5,13 @@ import dal.database.DatabaseConnector;
 import dal.database.SqlServerException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
+import java.sql.Date;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 /*Data access object is a class in which the program transforms the data from the database into an instance of the
 movie class, also contains function for sending the private instance of the movie to a method in the gui layer that
@@ -39,16 +40,16 @@ public class MovieDAO {
                 while (resultSet.next()){
                     int id = resultSet.getInt("ID");
                     String name = resultSet.getString("Name");
-                    double rating = resultSet.getFloat("IMDB Rating");
+                    double rating = resultSet.getFloat("IMDBRating");
                     String genre = resultSet.getString("Genre");
                     String path = resultSet.getString("Path");
                     String cast = resultSet.getString("Cast");
                     String description = resultSet.getString("Description");
-                    Date lastView = resultSet.getDate("Last View");
+                    Date lastView = resultSet.getDate("LastView");
                     String personalRating=resultSet.getString("PersonalRating");
 
                     //Creating movie object
-                    Movie movie = new Movie(id,name, rating, genre, path, cast, description,personalRating);
+                    Movie movie = new Movie(id,name, rating, genre, path, cast, description,personalRating, lastView);
 
                     //Adding movie object to list of all movies
                     allMovies.add(movie);
@@ -116,7 +117,8 @@ public class MovieDAO {
             String moviePath = newMovie.getPath();
             String movieCast = newMovie.getCast();
             String movieDescription = newMovie.getDescription();
-            String sql = "INSERT INTO Movie VALUES("+movieID+",'"+movieName+"', "+movieRating+", '"+movieCategory+"', '"+moviePath+"', '"+movieCast+"', '"+movieDescription+"', null, null)";
+            int personalRating = 0;
+            String sql = "INSERT INTO Movie VALUES("+movieID+",'"+movieName+"', "+movieRating+", '"+movieCategory+"', '"+moviePath+"', '"+movieCast+"', '"+movieDescription+"', null, '"+ personalRating +"')";
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){
                 ResultSet resultSet = statement.getResultSet();
@@ -130,6 +132,21 @@ public class MovieDAO {
         DatabaseConnector dbConnector = new DatabaseConnector();
         try(Connection connection = dbConnector.getConnection()) {
             String sql = "Delete FROM Movie where Name='" + index + "';";
+            System.out.println(sql);
+            Statement statement = connection.createStatement();
+            if(statement.execute(sql)){
+                ResultSet resultSet = statement.getResultSet();
+                System.out.println("Removed correctly");
+            }
+        }
+    }
+
+    //Updates lastView with the current date when a movie is played
+    public static void updateWatchTime(String index) throws SQLException {
+        DatabaseConnector dbConnector = new DatabaseConnector();
+        Date newWatchDate = Date.valueOf(LocalDate.now());
+        try(Connection connection = dbConnector.getConnection()) {
+            String sql = "UPDATE Movie SET LastView ='"+newWatchDate+"' WHERE Name='" + index + "';";
             System.out.println(sql);
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){

@@ -8,6 +8,7 @@ import dal.CategoryDAO;
 import dal.MovieDAO;
 import dal.database.SqlServerException;
 import gui.PrivateMovie;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +26,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -38,6 +42,8 @@ public class MoviesearchController implements Initializable {
   @FXML
   public TableColumn<Category, String> categoryTableColumn;
 
+  @FXML
+  public TableColumn<Movie, Date> lastViewTableColumn;
     @FXML
     private TableColumn<Movie, String> castTableColumn;
 
@@ -79,6 +85,7 @@ public class MoviesearchController implements Initializable {
 
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
         imdbTableColumn.setCellValueFactory(new PropertyValueFactory<>("IMDB"));
+        lastViewTableColumn.setCellValueFactory(new PropertyValueFactory<>("LastView"));
         genreTableColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
         castTableColumn.setCellValueFactory(new PropertyValueFactory<>("Cast"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
@@ -89,6 +96,7 @@ public class MoviesearchController implements Initializable {
         try {
             ObservableList<Movie> allMovies = dataRoute.routeMovie();
             updateMovieTable(allMovies);
+            testForDeletableMovies();
         } catch (SQLException | SqlServerException e) {
 
             throw new RuntimeException(e);
@@ -129,8 +137,10 @@ public class MoviesearchController implements Initializable {
         updateMovieTable(filter.searchMovie(movieSearchBox.getText(), "category"));
     }
 
-    public void playMovie(){
-        playerFunctions.playVideo(movieTableView.getSelectionModel().getSelectedItem().getPath());
+    public void playMovie() throws SQLException {
+        Movie selectedMovie = movieTableView.getSelectionModel().getSelectedItem();
+        MovieDAO.updateWatchTime(selectedMovie.getName());
+        playerFunctions.playVideo(selectedMovie.getPath());
     }
     public void openAddCategory() throws IOException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddCategory.fxml"));
@@ -177,7 +187,6 @@ public class MoviesearchController implements Initializable {
     }
     public void setCategory() throws IOException{
         openSetCategory();
-
     }
 
 
@@ -209,12 +218,12 @@ public class MoviesearchController implements Initializable {
     public void openSetPersonalRating() throws IOException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/SetPersonalRating.fxml"));
         Scene scene = new Scene(loader.load());
-        Stage stageAddCategory = new Stage();
+        Stage stageAddRating = new Stage();
         // listOfStages.add(stageAddSong);
-        stageAddCategory.setTitle("Set a category");
-        stageAddCategory.setScene(scene);
-        stageAddCategory.show();
-        stageAddCategory.setResizable(false);
+        stageAddRating.setTitle("Set a personal rating");
+        stageAddRating.setScene(scene);
+        stageAddRating.show();
+        stageAddRating.setResizable(false);
     }
 
     public void setPersonalRating() throws IOException {
@@ -223,21 +232,52 @@ public class MoviesearchController implements Initializable {
     public void openAddMovie() throws IOException, SQLException, SqlServerException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/AddMovie.fxml"));
         Scene scene = new Scene(loader.load());
-        Stage stageAddCategory = new Stage();
-        stageAddCategory.setTitle("Add a movie");
-        stageAddCategory.setScene(scene);
-        stageAddCategory.show();
-        stageAddCategory.setResizable(false);
+        Stage stageAddMovie = new Stage();
+        stageAddMovie.setTitle("Add a movie");
+        stageAddMovie.setScene(scene);
+        stageAddMovie.show();
+        stageAddMovie.setResizable(false);
         updateMovieTable(dataRoute.routeMovie());
     }
 
     public void openRemoveMovie() throws IOException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/RemoveMovie.fxml"));
         Scene scene = new Scene(loader.load());
-        Stage stageAddCategory = new Stage();
-        stageAddCategory.setTitle("Remove a movie");
-        stageAddCategory.setScene(scene);
-        stageAddCategory.show();
-        stageAddCategory.setResizable(false);
+        Stage stageRemoveMovie = new Stage();
+        stageRemoveMovie.setTitle("Remove a movie");
+        stageRemoveMovie.setScene(scene);
+        stageRemoveMovie.show();
+        stageRemoveMovie.setResizable(false);
+    }
+
+    public void openDeleteMoviePopup() throws IOException {
+        FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/DeleteMoviePopup.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stageOpenPopup = new Stage();
+        stageOpenPopup.setScene(scene);
+        stageOpenPopup.setAlwaysOnTop(true);
+        stageOpenPopup.show();
+        stageOpenPopup.setResizable(false);
+    }
+
+    public void testForDeletableMovies(){
+        DataRoute dataRoute = new DataRoute();
+        try {
+            ObservableList<Movie> allMovies = dataRoute.routeMovie();
+
+            //checks if movie has low rating and hasn't been played in two years
+            for (Movie movie:allMovies) {
+                LocalDate lastView = LocalDate.parse(movie.getLastView().toString());
+                LocalDate timeNow = LocalDate.now();
+                long daysBetween = Duration.between(lastView.atTime(0, 0), timeNow.atTime(0, 0)).toDays();
+                if (Integer.parseInt(movie.getPersonalRating()) < 6 && daysBetween > 730) {
+                    openDeleteMoviePopup();
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (SqlServerException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
