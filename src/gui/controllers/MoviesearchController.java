@@ -3,14 +3,13 @@ package gui.controllers;
 
 import be.*;
 
+import bll.Filter;
 import dal.CatMovDAO;
 import dal.CategoryDAO;
 import dal.MovieDAO;
 import dal.database.SqlServerException;
 import gui.PrivateMovie;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -149,6 +149,7 @@ public class MoviesearchController implements Initializable {
         Scene scene = new Scene(loader.load());
         Stage stageAddCategory = new Stage();
        // listOfStages.add(stageAddSong);
+        stageAddCategory.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
         stageAddCategory.setTitle("Add a category");
         stageAddCategory.setScene(scene);
         stageAddCategory.show();
@@ -162,6 +163,7 @@ public class MoviesearchController implements Initializable {
         Scene scene = new Scene(loader.load());
         Stage stageAddCategory = new Stage();
         // listOfStages.add(stageAddSong);
+        stageAddCategory.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
         stageAddCategory.setTitle("Remove a category");
         stageAddCategory.setScene(scene);
         stageAddCategory.show();
@@ -183,6 +185,7 @@ public class MoviesearchController implements Initializable {
         Stage stageAddCategory = new Stage();
         // listOfStages.add(stageAddSong);
         stageAddCategory.setTitle("Set a category");
+        stageAddCategory.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
         stageAddCategory.setScene(scene);
         stageAddCategory.show();
         stageAddCategory.setResizable(false);
@@ -192,36 +195,38 @@ public class MoviesearchController implements Initializable {
     }
 
 
-    public void  getPlaylist(MouseEvent mouseEvent) throws SQLException, SqlServerException {
+    public void  getCategory(MouseEvent mouseEvent) throws SQLException, SqlServerException {
 
-        //Getting selected category name
-        String categorySelection = categoryTableView.getSelectionModel().getSelectedItem().getName();
+        if (categoryTableView.getSelectionModel().getSelectedItem() != null) {
+            //Getting selected category name
+            String categorySelection = categoryTableView.getSelectionModel().getSelectedItem().getName();
 
-        //Getting the category from the database to get the CategoryID
-        Category cat= CategoryDAO.getAllCategories().filtered(category -> category.getName().equals(categorySelection)).get(0);
+            //Getting the category from the database to get the CategoryID
+            Category cat = CategoryDAO.getAllCategories().filtered(category -> category.getName().equals(categorySelection)).get(0);
 
-        //Filtering all catMovs to get akk movies related to this Category
-        ObservableList<CatMov> catMovs= CatMovDAO.getCatMov().filtered(catMov -> catMov.getCatID()==cat.getId());
+            //Filtering all catMovs to get akk movies related to this Category
+            ObservableList<CatMov> catMovs = CatMovDAO.getCatMov().filtered(catMov -> catMov.getCatID() == cat.getId());
 
-        //Setting the Ids od the related movies
-        List<Integer> ids=new ArrayList<>();
+            //Setting the Ids od the related movies
+            List<Integer> ids = new ArrayList<>();
 
-        for (CatMov e:catMovs) {
-            ids.add(e.getMovID());
+            for (CatMov e : catMovs) {
+                ids.add(e.getMovID());
+            }
+
+            //Filtering all the movies from the database
+            ObservableList<Movie> movies = MovieDAO.getAllMovies().filtered(movie -> ids.contains(movie.getId()));
+
+            //Displaying the table
+            movieTableView.setItems(movies);
         }
-
-        //Filtering all the movies from the database
-        ObservableList<Movie> movies= MovieDAO.getAllMovies().filtered(movie -> ids.contains(movie.getId()));
-
-        //Displaying the table
-        movieTableView.setItems(movies);
-
     }
     public void openSetPersonalRating() throws IOException {
         FXMLLoader loader = new FXMLLoader(PrivateMovie.class.getResource("view/SetPersonalRating.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stageAddRating = new Stage();
         // listOfStages.add(stageAddSong);
+        stageAddRating.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
         stageAddRating.setTitle("Set a personal rating");
         stageAddRating.setScene(scene);
         stageAddRating.show();
@@ -236,6 +241,7 @@ public class MoviesearchController implements Initializable {
         Scene scene = new Scene(loader.load());
         Stage stageAddMovie = new Stage();
         stageAddMovie.setTitle("Add a movie");
+        stageAddMovie.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
         stageAddMovie.setScene(scene);
         stageAddMovie.show();
         stageAddMovie.setResizable(false);
@@ -247,6 +253,7 @@ public class MoviesearchController implements Initializable {
         Scene scene = new Scene(loader.load());
         Stage stageRemoveMovie = new Stage();
         stageRemoveMovie.setTitle("Remove a movie");
+        stageRemoveMovie.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
         stageRemoveMovie.setScene(scene);
         stageRemoveMovie.show();
         stageRemoveMovie.setResizable(false);
@@ -257,6 +264,7 @@ public class MoviesearchController implements Initializable {
         Scene scene = new Scene(loader.load());
         Stage stageOpenPopup = new Stage();
         stageOpenPopup.setScene(scene);
+        stageOpenPopup.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
         stageOpenPopup.setAlwaysOnTop(true);
         stageOpenPopup.show();
         stageOpenPopup.setResizable(false);
@@ -266,19 +274,18 @@ public class MoviesearchController implements Initializable {
         DataRoute dataRoute = new DataRoute();
         try {
             ObservableList<Movie> allMovies = dataRoute.routeMovie();
-
             //checks if movie has low rating and hasn't been played in two years
             for (Movie movie:allMovies) {
-                LocalDate lastView = LocalDate.parse(movie.getLastView().toString());
-                LocalDate timeNow = LocalDate.now();
-                long daysBetween = Duration.between(lastView.atTime(0, 0), timeNow.atTime(0, 0)).toDays();
-                if (Integer.parseInt(movie.getPersonalRating()) < 6 && daysBetween > 730) {
-                    openDeleteMoviePopup();
+                if (movie.getLastView() != null) {
+                    LocalDate lastView = LocalDate.parse(movie.getLastView().toString());
+                    LocalDate timeNow = LocalDate.now();
+                    long daysBetween = Duration.between(lastView.atTime(0, 0), timeNow.atTime(0, 0)).toDays();
+                    if (Integer.parseInt(movie.getPersonalRating()) < 6 && daysBetween > 730) {
+                        openDeleteMoviePopup();
+                    }
                 }
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (SqlServerException | IOException e) {
+        } catch (SQLException | SqlServerException | IOException e) {
             throw new RuntimeException(e);
         }
     }

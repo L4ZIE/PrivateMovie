@@ -1,6 +1,6 @@
 package be;
 
-import bll.IdGen;
+
 
 public class Category {
 

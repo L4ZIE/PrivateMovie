@@ -118,7 +118,7 @@ public class MovieDAO {
             String movieCast = newMovie.getCast();
             String movieDescription = newMovie.getDescription();
             int personalRating = 0;
-            String sql = "INSERT INTO Movie VALUES("+movieID+",'"+movieName+"', "+movieRating+", '"+movieCategory+"', '"+moviePath+"', '"+movieCast+"', '"+movieDescription+"', null, '"+ personalRating +"')";
+            String sql = "INSERT INTO Movie VALUES" + "("+movieID+",'"+movieName+"', "+movieRating+", '"+movieCategory+"', '"+moviePath+"', '"+movieCast+"', '"+movieDescription+"', null, '"+ personalRating +"')";
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){
                 ResultSet resultSet = statement.getResultSet();
@@ -154,5 +154,30 @@ public class MovieDAO {
                 System.out.println("Removed correctly");
             }
         }
+    }
+
+    public void updateCategory(int id, String name) throws SQLException, SqlServerException {
+
+        Movie movie=getAllMovies().filtered(movie1 -> movie1.getId()==id).get(0);
+
+        String currentCategories=movie.getGenre();
+
+        if (currentCategories.length()!=0)
+         currentCategories+="  ;  ";
+
+        currentCategories+=name;
+
+
+        DatabaseConnector dbConnector = new DatabaseConnector();
+        try(Connection connection = dbConnector.getConnection()) {
+            String sql = "UPDATE Movie SET Genre ='"+currentCategories+"' WHERE ID=" + id + ";";
+            System.out.println(sql);
+            Statement statement = connection.createStatement();
+            if(statement.execute(sql)){
+                ResultSet resultSet = statement.getResultSet();
+                System.out.println("Removed correctly");
+            }
+        }
+
     }
 }
