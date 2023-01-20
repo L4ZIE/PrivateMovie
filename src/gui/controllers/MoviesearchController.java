@@ -137,7 +137,7 @@ public class MoviesearchController implements Initializable {
         updateMovieTable(filter.searchMovie(movieSearchBox.getText(), "category"));
     }
 
-    public void playMovie() throws SQLException {
+    public void playMovie() throws SQLException, IOException {
         if (movieTableView.getSelectionModel().getSelectedItem() != null) {
             Movie selectedMovie = movieTableView.getSelectionModel().getSelectedItem();
             MovieDAO.updateWatchTime(selectedMovie.getName());
@@ -265,7 +265,7 @@ public class MoviesearchController implements Initializable {
         Stage stageOpenPopup = new Stage();
         stageOpenPopup.setScene(scene);
         stageOpenPopup.getIcons().add(new Image("https://cdn-icons-png.flaticon.com/512/2503/2503508.png"));
-        stageOpenPopup.setAlwaysOnTop(true);
+        stageOpenPopup.setAlwaysOnTop(true) ;
         stageOpenPopup.show();
         stageOpenPopup.setResizable(false);
     }
