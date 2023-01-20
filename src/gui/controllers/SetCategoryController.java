@@ -52,11 +52,9 @@ public class SetCategoryController implements Initializable {
 
         categoryDAO=new CategoryDAO();
         Category cat=categoryDAO.getAllCategories().filtered(category -> category.getName().equals(catIndex)).get(0);
-        System.out.println(cat.getId()+""+cat.getName());
         Movie mov=movieDAO.getAllMovies().filtered(movie -> movie.getName().equals(movIndex)).get(0);
-        System.out.println(mov.getId()+""+mov.getName());
 
-
+        movieDAO.updateCategory(mov.getId(),cat.getName());
 
         CatMov catMov;
         if (CatMovDAO.getCatMov().size()>0) {

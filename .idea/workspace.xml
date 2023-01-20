@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="881b7c23-fced-4f39-98d6-482abdbdf2c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/be/Filter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/bll/IdGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/dal/MovieDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/PrivateMovie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/MoviesearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/SetCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PrivateMovie/gui/controllers/SetCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/model/CategoryModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PrivateMovie/gui/view/Test.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/CatMov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/CatMov.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/IdGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/PrivateMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PrivateMovie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/MoviesearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controllers/SetCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/SetCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/model/CategoryModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/PrivateMovieView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +148,7 @@
       <workItem from="1674133720706" duration="1483000" />
       <workItem from="1674135240108" duration="3968000" />
       <workItem from="1674139921204" duration="5878000" />
+      <workItem from="1674168925082" duration="6916000" />
     </task>
     <servers />
   </component>

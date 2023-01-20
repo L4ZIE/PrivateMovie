@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.MoviesearchController">
+    <children>
+        <TableView fx:id="movieTableView" layoutX="30.0" layoutY="74.0" prefHeight="486.0" prefWidth="694.0">
+            <columns>
+                <TableColumn fx:id="nameTableColumn" prefWidth="114.39995956420898" text="Name" />
+                <TableColumn fx:id="imdbTableColumn" prefWidth="56.000030517578125" text="IMDB" />
+            <TableColumn fx:id="lastViewTableColumn" prefWidth="91.99998474121094" text="Last View" />
+                <TableColumn fx:id="genreTableColumn" prefWidth="86.39996337890625" text="Category" />
+                <TableColumn fx:id="castTableColumn" prefWidth="100.0" text="Cast" />
+                <TableColumn fx:id="descriptionTableColumn" prefWidth="116.800048828125" text="Description" />
+            <TableColumn fx:id="personalRatingTableColumn" minWidth="0.0" prefWidth="130.39996337890625" text="Personal Rating" />
+            </columns>
+        </TableView>
+        <Label layoutX="30.0" layoutY="41.0" text="Search Movie">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="movieSearchBox" layoutX="140.0" layoutY="39.0" prefHeight="25.0" prefWidth="330.0" promptText="Keywords..." />
+      <TableView fx:id="categoryTableView" layoutX="781.0" layoutY="74.0" onMouseClicked="#getCategory" prefHeight="486.0" prefWidth="253.0">
+         <columns>
+            <TableColumn fx:id="categoryTableColumn" prefWidth="250.39996337890625" text=" Category" />
+         </columns>
+      </TableView>
+      <Button fx:id="addMovieButton" layoutX="30.0" layoutY="567.0" mnemonicParsing="false" onAction="#openAddMovie" text="Add" />
+      <Button fx:id="removeMovieButton" layoutX="93.0" layoutY="567.0" mnemonicParsing="false" onAction="#openRemoveMovie" text="Remove" />
+      <Button fx:id="addCategoryButton" layoutX="788.0" layoutY="567.0" mnemonicParsing="false" onAction="#addCategory" text="Add" />
+      <Button fx:id="removeCategoryButton" layoutX="849.0" layoutY="567.0" mnemonicParsing="false" onAction="#removeCategory" text="Remove" />
+      <Button fx:id="playMovieButton" layoutX="211.0" layoutY="567.0" mnemonicParsing="false" onAction="#playMovie" text="Play" />
+      <Button fx:id="setCategory" layoutX="297.0" layoutY="567.0" mnemonicParsing="false" onAction="#setCategory" prefHeight="25.0" prefWidth="89.0" text="Set Category" />
+      <Button fx:id="addCategoryButton1" layoutX="924.0" layoutY="567.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh tables" />
+        <Button fx:id="searchName" layoutX="140.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchForName" text="Name" />
+        <Button fx:id="searchCast" layoutX="191.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchForCast" text="Cast" />
+        <Button fx:id="searchCategory" layoutX="233.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchForCategory" text="Category" />
+      <Button fx:id="setPersonalRating" layoutX="593.0" layoutY="567.0" mnemonicParsing="false" onAction="#setPersonalRating" prefHeight="25.0" prefWidth="131.0" text="Set Personal Rating " />
+    </children>
+</Pane>
