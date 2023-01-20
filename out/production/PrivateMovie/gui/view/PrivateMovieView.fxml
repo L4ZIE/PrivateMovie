@@ -27,7 +27,7 @@
             </font>
         </Label>
         <TextField fx:id="movieSearchBox" layoutX="140.0" layoutY="39.0" prefHeight="25.0" prefWidth="330.0" promptText="Keywords..." />
-      <TableView fx:id="categoryTableView" layoutX="781.0" layoutY="74.0" onMouseClicked="#getPlaylist" prefHeight="486.0" prefWidth="253.0">
+      <TableView fx:id="categoryTableView" layoutX="781.0" layoutY="74.0" onMouseClicked="#getCategory" prefHeight="486.0" prefWidth="253.0">
          <columns>
             <TableColumn fx:id="categoryTableColumn" prefWidth="250.39996337890625" text=" Category" />
          </columns>
